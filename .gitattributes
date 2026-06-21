@@ -1,0 +1,18 @@
+# Normalize line endings for all text files (ensure LF in repo)
+* text=eol=lf
+
+# Keep shell scripts executable
+*.sh text=eol=lf
+
+# Keep YAML consistent
+*.yaml text=eol=lf
+*.yml text=eol=lf
+
+# Keep JSON consistent
+*.json text=eol=lf
+
+# Keep TypeScript consistent
+*.ts text=eol=lf
+
+# Markdown
+*.md text=eol=lf
