@@ -1,0 +1,15 @@
+# Claude Code extension for godot-state-management
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "implementing state machines in Godot"
+  - "Godot FSM patterns"
+  - "behavior trees Godot AI"
+  - "hierarchical state machine Godot"
+  - "character state management"
+  - "game flow states Godot"
+
+tool_permissions:
+  - read
+  - write
+  - bash

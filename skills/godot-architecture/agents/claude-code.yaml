@@ -1,0 +1,15 @@
+# Claude Code extension for godot-architecture
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "designing Godot game architecture"
+  - "Godot scene composition patterns"
+  - "ECS patterns in Godot"
+  - "dependency injection Godot"
+  - "service locator vs signals"
+  - "Godot project structure"
+
+tool_permissions:
+  - read
+  - write
+  - bash

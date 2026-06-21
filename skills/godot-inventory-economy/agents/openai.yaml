@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-inventory-economy
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "building inventory systems in Godot"
+  - "Godot item management"
+  - "game economy Godot"
+  - "drag-drop inventory Godot"
+  - "equip system Godot"
+  - "shop system Godot"

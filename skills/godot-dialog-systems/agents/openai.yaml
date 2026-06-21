@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-dialog-systems
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "building dialogue systems in Godot"
+  - "Godot branching narrative"
+  - "NPC conversation Godot"
+  - "typewriter text effect Godot"
+  - "resource-based dialogue Godot"
+  - "voice sync Godot"

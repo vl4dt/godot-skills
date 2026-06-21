@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-save-systems
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "implementing save systems in Godot"
+  - "Godot persistence patterns"
+  - "save file serialization Godot"
+  - "save migration versioning"
+  - "cloud save Godot"
+  - "auto-save Godot"

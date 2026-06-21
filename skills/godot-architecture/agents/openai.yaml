@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-architecture
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "designing Godot game architecture"
+  - "Godot scene composition patterns"
+  - "ECS patterns in Godot"
+  - "dependency injection Godot"
+  - "service locator vs signals"
+  - "Godot project structure"

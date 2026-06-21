@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-i18n
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "localizing Godot games"
+  - "Godot translation system"
+  - "i18n Godot patterns"
+  - "runtime language switching Godot"
+  - "RTL text Godot"
+  - "font fallback Godot"

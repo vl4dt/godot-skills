@@ -1,0 +1,15 @@
+# Claude Code extension for godot-save-systems
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "implementing save systems in Godot"
+  - "Godot persistence patterns"
+  - "save file serialization Godot"
+  - "save migration versioning"
+  - "cloud save Godot"
+  - "auto-save Godot"
+
+tool_permissions:
+  - read
+  - write
+  - bash

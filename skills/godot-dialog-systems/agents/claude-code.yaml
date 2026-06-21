@@ -1,0 +1,15 @@
+# Claude Code extension for godot-dialog-systems
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "building dialogue systems in Godot"
+  - "Godot branching narrative"
+  - "NPC conversation Godot"
+  - "typewriter text effect Godot"
+  - "resource-based dialogue Godot"
+  - "voice sync Godot"
+
+tool_permissions:
+  - read
+  - write
+  - bash
