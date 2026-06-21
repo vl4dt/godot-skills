@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "godot_skills",
+  "project_id": "8d0742aa-92da-49b5-93f4-2f7569c6a26d"
+}
