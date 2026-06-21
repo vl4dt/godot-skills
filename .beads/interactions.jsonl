@@ -1,0 +1,2 @@
+{"id":"int-29b83c8c","kind":"field_change","created_at":"2026-06-21T05:11:44.2256525Z","actor":"Ricardo A. Salgado","issue_id":"godot-skills-wnw","extra":{"field":"status","new_value":"in_progress","old_value":"open"}}
+{"id":"int-e286a34f","kind":"field_change","created_at":"2026-06-21T05:11:50.3396145Z","actor":"Ricardo A. Salgado","issue_id":"godot-skills-wnw","extra":{"field":"status","new_value":"closed","old_value":"in_progress","reason":"Completed during scaffolding: verify.sh and verify.ps1 created in scripts/. Both pass all 24/24 checks."}}
