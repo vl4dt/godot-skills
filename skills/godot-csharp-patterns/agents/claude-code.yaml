@@ -1,0 +1,14 @@
+# Claude Code extension for godot-csharp-patterns
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "writing C# code in Godot"
+  - "Godot Mono / C# patterns"
+  - "Export attributes in Godot"
+  - "Godot GDExtension interop"
+  - "Godot C# performance optimization"
+
+tool_permissions:
+  - read
+  - write
+  - bash

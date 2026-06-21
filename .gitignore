@@ -1,0 +1,40 @@
+# Pi agent internals
+.pi/
+
+# Node modules
+node_modules/
+
+# Build artifacts
+mcp-bridge/godot-mcp-server/dist/
+mcp-bridge/godot-mcp-server/*.tsbuildinfo
+mcp-bridge/_gen.js
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+tmp/
+temp/
+
+# Godot (if developing locally)
+*.import
+*.import/
+.uid
+export/

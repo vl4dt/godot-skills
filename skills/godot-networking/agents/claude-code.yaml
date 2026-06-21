@@ -1,0 +1,15 @@
+# Claude Code extension for godot-networking
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "networking and multiplayer in Godot"
+  - "Godot RPC system and replication"
+  - "Godot server-authoritative games"
+  - "Godot client prediction"
+  - "Godot lag compensation"
+  - "Godot Steam networking"
+
+tool_permissions:
+  - read
+  - write
+  - bash

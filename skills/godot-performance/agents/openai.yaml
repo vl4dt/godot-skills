@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-performance
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "performance optimization in Godot"
+  - "Godot profiling and benchmarking"
+  - "Godot draw call reduction"
+  - "Godot instancing optimization"
+  - "Godot memory management"
+  - "Godot mobile performance"

@@ -1,0 +1,13 @@
+# OpenAI / Codex CLI extension for godot-gdscript-patterns
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "writing GDScript code"
+  - "Godot signals and events"
+  - "node composition in Godot"
+  - "GDScript design patterns"
+  - "resource management in Godot"

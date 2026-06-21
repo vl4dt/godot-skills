@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-ui
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "UI development in Godot"
+  - "Godot Control nodes and containers"
+  - "Godot custom themes and styling"
+  - "Godot responsive layouts"
+  - "Godot input controls UI"
+  - "Godot HUD design"

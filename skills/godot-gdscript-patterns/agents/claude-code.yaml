@@ -1,0 +1,14 @@
+# Claude Code extension for godot-gdscript-patterns
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "writing GDScript code"
+  - "Godot signals and events"
+  - "node composition in Godot"
+  - "GDScript design patterns"
+  - "resource management in Godot"
+
+tool_permissions:
+  - read
+  - write
+  - bash

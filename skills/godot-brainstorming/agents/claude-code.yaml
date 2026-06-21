@@ -1,0 +1,13 @@
+# Claude Code extension for godot-brainstorming
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "designing Godot game architecture"
+  - "Godot scene organization"
+  - "Godot state machine patterns"
+  - "Godot multiplayer network architecture"
+  - "Godot game design decisions"
+
+tool_permissions:
+  - read
+  - write

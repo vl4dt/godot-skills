@@ -1,0 +1,13 @@
+# OpenAI / Codex CLI extension for godot-csharp-patterns
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "writing C# code in Godot"
+  - "Godot Mono / C# patterns"
+  - "Export attributes in Godot"
+  - "Godot GDExtension interop"
+  - "Godot C# performance optimization"

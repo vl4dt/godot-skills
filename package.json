@@ -1,0 +1,20 @@
+{
+  "name": "@robotcat/godot-skills",
+  "version": "1.0.0",
+  "description": "Godot game development skills for AI coding agents",
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "godot",
+    "skills",
+    "game-development",
+    "agent-skills"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robotcat/godot-skills"
+  },
+  "pi": {
+    "skills": ["skills/*"]
+  }
+}

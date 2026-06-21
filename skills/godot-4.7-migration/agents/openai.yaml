@@ -1,0 +1,13 @@
+# OpenAI / Codex CLI extension for godot-4.7-migration
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "migrating to Godot 4.7"
+  - "Godot version upgrade"
+  - "breaking changes in Godot 4.7"
+  - "new Godot 4.7 features"
+  - "HDR setup in Godot"

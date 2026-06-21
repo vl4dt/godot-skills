@@ -1,0 +1,13 @@
+# OpenAI / Codex CLI extension for godot-brainstorming
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "designing Godot game architecture"
+  - "Godot scene organization"
+  - "Godot state machine patterns"
+  - "Godot multiplayer network architecture"
+  - "Godot game design decisions"

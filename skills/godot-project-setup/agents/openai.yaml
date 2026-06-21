@@ -1,0 +1,12 @@
+# OpenAI / Codex CLI extension for godot-project-setup
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "creating a new Godot project"
+  - "setting up Godot project structure"
+  - "Godot export presets"
+  - "scaffolding a Godot game"

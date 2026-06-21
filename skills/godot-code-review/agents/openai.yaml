@@ -1,0 +1,13 @@
+# OpenAI / Codex CLI extension for godot-code-review
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "reviewing Godot code"
+  - "Godot performance checklist"
+  - "Godot memory leak detection"
+  - "Godot anti-patterns"
+  - "Godot code style review"

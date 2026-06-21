@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-physics
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "physics systems in Godot"
+  - "Godot collision layers and masks"
+  - "Godot rigid body dynamics"
+  - "Godot character physics movement"
+  - "Godot physics materials"
+  - "Godot area detection"

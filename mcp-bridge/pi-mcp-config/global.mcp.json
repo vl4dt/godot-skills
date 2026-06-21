@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "godot": {
+      "command": "node",
+      "args": [
+        "<path-to-godot-skills>/mcp-bridge/godot-mcp-server/dist/index.js"
+      ],
+      "env": {},
+      "transportType": "stdio"
+    }
+  }
+}
