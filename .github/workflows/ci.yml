@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Verify package integrity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run skill validation
+        run: bash scripts/validate-skills.sh
+
+      - name: Run lint checks
+        run: bash scripts/lint-skills.sh
+
+      - name: Run agent extension checks
+        run: bash scripts/check-agent-extensions.sh
+
+      - name: Run full verification
+        run: bash scripts/verify.sh
+
+  build-mcp-server:
+    name: Build MCP server
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: mcp-bridge/godot-mcp-server
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+  check-line-endings:
+    name: Check line endings
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          checkout:
+            lfs: false
+
+      - name: Check for CRLF in source files
+        run: |
+          # Allow .gitattributes to handle line endings; warn if CRLF found in code
+          if grep -rPl '\r\n' --include='*.sh' --include='*.md' --include='*.yaml' --include='*.yml' --include='*.ts' --include='*.js' --include='*.json' --exclude-dir='node_modules' --exclude-dir='.git' . 2>/dev/null; then
+            echo "::warning::CRLF line endings detected in source files"
+          else
+            echo "✓ No CRLF line endings in source files"
+          fi

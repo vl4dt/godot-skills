@@ -23,6 +23,39 @@ else
     fail "Skills validation failed — run scripts/validate-skills.sh for details"
 fi
 
+# [1b] Lint checks
+echo ""
+echo "[1b] SKILL.md lint"
+if bash scripts/lint-skills.sh > /dev/null 2>&1; then
+    pass "SKILL.md lint checks pass"
+else
+    fail "SKILL.md lint failed — run scripts/lint-skills.sh for details"
+fi
+
+# [1c] Agent extension validation
+echo ""
+echo "[1c] Agent extension validation"
+if bash scripts/check-agent-extensions.sh > /dev/null 2>&1; then
+    pass "Agent extension checks pass"
+else
+    fail "Agent extension validation failed — run scripts/check-agent-extensions.sh for details"
+fi
+
+# [1d] references/ directories
+echo ""
+echo "[1d] References directories"
+REF_MISSING=0
+for skill_dir in skills/*/; do
+    skill_name=$(basename "$skill_dir")
+    if [ ! -d "$skill_dir/references" ]; then
+        fail "$skill_name — references/ directory missing"
+        REF_MISSING=$((REF_MISSING+1))
+    fi
+done
+if [ "$REF_MISSING" -eq 0 ]; then
+    pass "All skills have references/ directories"
+fi
+
 # [2] Package structure
 echo ""
 echo "[2] Package structure"
@@ -91,6 +124,13 @@ echo ""
 echo "[9] Scripts"
 [ -f "scripts/validate-skills.sh" ] && pass "scripts/validate-skills.sh" || fail "scripts/validate-skills.sh missing"
 [ -f "scripts/verify.sh" ] && pass "scripts/verify.sh" || fail "scripts/verify.sh missing"
+[ -f "scripts/lint-skills.sh" ] && pass "scripts/lint-skills.sh" || fail "scripts/lint-skills.sh missing"
+[ -f "scripts/check-agent-extensions.sh" ] && pass "scripts/check-agent-extensions.sh" || fail "scripts/check-agent-extensions.sh missing"
+
+# [10] CI/CD
+echo ""
+echo "[10] CI/CD configuration"
+[ -f ".github/workflows/ci.yml" ] && pass "GitHub Actions CI workflow" || fail "GitHub Actions CI workflow missing"
 
 echo ""
 echo "=========================================="
