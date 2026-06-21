@@ -1,4 +1,4 @@
-# @robotcat/godot-skills
+# @vl4dt/godot-skills
 
 **Godot game development skills for AI coding agents.**
 
@@ -8,12 +8,12 @@ A complete, distributable, open-source skill package providing domain knowledge,
 
 ### Install in pi-agent
 ```bash
-pi install npm:@robotcat/godot-skills
+pi install npm:@vl4dt/godot-skills
 ```
 
 ### Install from GitHub
 ```bash
-pi install git:github.com/robotcat/godot-skills@v0.1.0
+pi install git:github.com/vl4dt/godot-skills@v0.1.0
 ```
 
 ### Local development

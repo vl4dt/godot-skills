@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to @robotcat/godot-skills.
+All notable changes to @vl4dt/godot-skills.
 
 Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [SemVer](https://semver.org/)
 See [docs/changelog-guide.md](docs/changelog-guide.md) for conventions.
@@ -38,7 +38,7 @@ See [docs/changelog-guide.md](docs/changelog-guide.md) for conventions.
 - `godot-networking` — RPC system, authority models, replication patterns (rpc/rset/rset_group), lag compensation, Steam Frame
 
 ### Added — Package Infrastructure
-- `package.json` with pi manifest (`pi.skills: ["skills/*"]`) and npm scoped name `@robotcat/godot-skills`
+- `package.json` with pi manifest (`pi.skills: ["skills/*"]`) and npm scoped name `@vl4dt/godot-skills`
 - MIT License
 - Cross-agent compatibility via Agent Skills Open Standard
 - Agent-specific extensions (`agents/claude-code.yaml`, `agents/openai.yaml`) for all 12 skills

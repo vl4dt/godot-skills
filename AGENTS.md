@@ -1,6 +1,6 @@
 # Cross-Agent Usage Guide
 
-This document explains how to use @robotcat/godot-skills across different coding agents.
+This document explains how to use @vl4dt/godot-skills across different coding agents.
 
 ## How Skills Work Across Agents
 
@@ -14,8 +14,8 @@ All skills follow the [Agent Skills Open Standard](https://agentskills.io/specif
 
 ### pi-agent (Recommended)
 ```bash
-pi install npm:@robotcat/godot-skills
-# Skills auto-discover from ~/.pi/agent/npm/@robotcat/godot-skills/skills/
+pi install npm:@vl4dt/godot-skills
+# Skills auto-discover from ~/.pi/agent/npm/@vl4dt/godot-skills/skills/
 ```
 
 ### Claude Code
@@ -45,7 +45,7 @@ These agents use `.cursorrules` or `.windsurfrules` primarily. To use these skil
 
 Example `.cursorrules` addition:
 ```markdown
-When working with Godot game development, follow patterns from @robotcat/godot-skills.
+When working with Godot game development, follow patterns from @vl4dt/godot-skills.
 For project setup, use godot-project-setup patterns.
 For GDScript code, follow godot-gdscript-patterns guidelines.
 ```
@@ -164,7 +164,7 @@ See [docs/cross-agent-testing.md](docs/cross-agent-testing.md) for the full test
 
 ## Reporting Issues
 
-Report compatibility issues at: https://github.com/robotcat/godot-skills/issues
+Report compatibility issues at: https://github.com/vl4dt/godot-skills/issues
 
 Include:
 - Agent name and version

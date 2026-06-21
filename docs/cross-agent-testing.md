@@ -1,6 +1,6 @@
 # Cross-Agent Testing Documentation
 
-This document describes how to test @robotcat/godot-skills across supported coding agents.
+This document describes how to test @vl4dt/godot-skills across supported coding agents.
 
 ## Validation Checklist
 
@@ -154,7 +154,7 @@ node -e "const d=require('./package.json'); if(!d.pi?.skills) throw new Error('m
 - [x] Skill names follow kebab-case with `godot-` prefix
 - [x] Agent-specific extensions present for all 7 skills (14 files total)
 - [x] No agent-specific features leak into core SKILL.md instructions
-- [x] package.json has scoped npm name (`@robotcat/godot-skills`) and pi manifest
+- [x] package.json has scoped npm name (`@vl4dt/godot-skills`) and pi manifest
 - [x] LICENSE is MIT
 - [x] pi-package keyword present in package.json
 - [x] README.md, AGENTS.md, docs/contributing.md present

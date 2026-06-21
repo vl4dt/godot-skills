@@ -1,6 +1,6 @@
 # Release Process
 
-This document describes how to release a new version of `@robotcat/godot-skills`.
+This document describes how to release a new version of `@vl4dt/godot-skills`.
 
 ## Versioning Scheme
 
@@ -82,11 +82,11 @@ npm publish --dry-run
 npm publish --access public
 ```
 
-> **Note:** The package is scoped (`@robotcat/godot-skills`), so `--access public` is required for the initial publish.
+> **Note:** The package is scoped (`@vl4dt/godot-skills`), so `--access public` is required for the initial publish.
 
 ## GitHub Release Steps
 
-1. Navigate to [GitHub Releases](https://github.com/robotcat/godot-skills/releases)
+1. Navigate to [GitHub Releases](https://github.com/vl4dt/godot-skills/releases)
 2. Click "Draft a new release"
 3. Select the tag (`vX.Y.Z`)
 4. Title: `vX.Y.Z — <brief summary>`
@@ -98,13 +98,13 @@ npm publish --access public
 
 ```bash
 # Verify npm package is published
-npm view @robotcat/godot-skills version
+npm view @vl4dt/godot-skills version
 
 # Verify GitHub tag exists
 git ls-remote --tags origin | grep vX.Y.Z
 
 # Test installation from npm
-npm install @robotcat/godot-skills@X.Y.Z --dry-run
+npm install @vl4dt/godot-skills@X.Y.Z --dry-run
 ```
 
 ## Release Cadence
@@ -121,7 +121,7 @@ If a release has issues:
 
 1. **npm unpublish** (within 72 hours):
    ```bash
-   npm unpublish @robotcat/godot-skills@X.Y.Z
+   npm unpublish @vl4dt/godot-skills@X.Y.Z
    ```
 
 2. **Delete GitHub tag**:

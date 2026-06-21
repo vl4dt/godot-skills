@@ -1,5 +1,5 @@
 #!/bin/bash
-# verify.sh — Unified verification for @robotcat/godot-skills
+# verify.sh — Unified verification for @vl4dt/godot-skills
 # Usage: ./scripts/verify.sh
 set -e
 cd "$(dirname "$0")/.."
@@ -11,7 +11,7 @@ pass() { echo "  ✓ $1"; PASS=$((PASS+1)); }
 fail() { echo "  ✗ $1"; FAIL=$((FAIL+1)); }
 
 echo "=========================================="
-echo "@robotcat/godot-skills — Verification"
+echo "@vl4dt/godot-skills — Verification"
 echo "=========================================="
 echo ""
 

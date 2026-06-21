@@ -1,4 +1,4 @@
-# verify.ps1 — Unified verification for @robotcat/godot-skills (PowerShell)
+# verify.ps1 — Unified verification for @vl4dt/godot-skills (PowerShell)
 # Usage: .\scripts\verify.ps1
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot\..
@@ -17,7 +17,7 @@ function Test-Check {
 }
 
 Write-Host "=========================================="
-Write-Host "@robotcat/godot-skills — Verification"
+Write-Host "@vl4dt/godot-skills — Verification"
 Write-Host "=========================================="
 Write-Host ""
 

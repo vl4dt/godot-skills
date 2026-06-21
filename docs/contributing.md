@@ -1,4 +1,4 @@
-# Contributing to @robotcat/godot-skills
+# Contributing to @vl4dt/godot-skills
 
 Thank you for your interest in contributing! This document covers how to contribute skills, fix issues, and improve the package.
 
@@ -12,7 +12,7 @@ Thank you for your interest in contributing! This document covers how to contrib
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/robotcat/godot-skills.git
+git clone https://github.com/vl4dt/godot-skills.git
 cd godot-skills
 
 # Test skill loading in pi-agent (local)

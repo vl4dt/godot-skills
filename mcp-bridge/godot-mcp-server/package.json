@@ -1,5 +1,5 @@
 {
-  "name": "@robotcat/godot-mcp-server",
+  "name": "@vl4dt/godot-mcp-server",
   "version": "0.2.0-alpha",
   "description": "MCP bridge server for Godot 4.x editor integration",
   "type": "module",
@@ -29,6 +29,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robotcat/godot-skills"
+    "url": "https://github.com/vl4dt/godot-skills"
   }
 }

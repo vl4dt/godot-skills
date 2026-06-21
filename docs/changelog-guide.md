@@ -1,6 +1,6 @@
 # Changelog Guide
 
-This document describes the changelog format and conventions for `@robotcat/godot-skills`.
+This document describes the changelog format and conventions for `@vl4dt/godot-skills`.
 
 ## Format
 

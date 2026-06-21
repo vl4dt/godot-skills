@@ -2,7 +2,7 @@
 
 ## What is this?
 
-`@robotcat/godot-skills` is a distributable, open-source skill package for AI coding agents. It provides domain knowledge, best practices, and patterns for **Godot 4.x game development** with full Godot 4.7 feature coverage. Compatible with pi-agent and 30+ other coding agents via the [Agent Skills Open Standard](https://agentskills.io).
+`@vl4dt/godot-skills` is a distributable, open-source skill package for AI coding agents. It provides domain knowledge, best practices, and patterns for **Godot 4.x game development** with full Godot 4.7 feature coverage. Compatible with pi-agent and 30+ other coding agents via the [Agent Skills Open Standard](https://agentskills.io).
 
 ## Domain Language
 
@@ -70,8 +70,8 @@ godot-skills/
 
 ### Distribution Status
 
-- Package ready for `npm publish` as `@robotcat/godot-skills`
-- GitHub repo at `github.com/robotcat/godot-skills` (needs creation/tagging)
+- Package ready for `npm publish` as `@vl4dt/godot-skills`
+- GitHub repo at `github.com/vl4dt/godot-skills` (needs creation/tagging)
 - 51/51 validation checks pass (s10 final verification)
 
 ## Key Constraints
@@ -85,7 +85,7 @@ godot-skills/
 
 ## Tech Stack
 
-- **Package**: npm (`@robotcat/godot-skills`), MIT license
+- **Package**: npm (`@vl4dt/godot-skills`), MIT license
 - **MCP Server**: Node.js + TypeScript, WebSocket JSON-RPC 2.0, stdio transport
 - **Target Godot**: 4.7 (primary), 4.0+ (compatible)
 - **Languages in skills**: GDScript, C# (Mono)

@@ -12,7 +12,7 @@ compatibility:
   - godot-4.6
   - godot-4.7
 metadata:
-  author: RoboCat
+  author: vl4dt
   version: 0.1.0
   tags:
     - godot
