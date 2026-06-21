@@ -1,6 +1,6 @@
 ---
 name: godot-brainstorming
-description: Architecture decision patterns for Godot game development across genres (RPG, platformer, RTS, puzzle). Covers scene organization, state machines, network architecture, and component composition. Use when designing a Godot game's architecture or making Godot-specific technical decisions.
+description: "Architecture decision patterns for Godot game development across genres (RPG, platformer, RTS, puzzle). Covers scene organization, state machines, network architecture, and component composition. Use when designing a Godot game's architecture or making Godot-specific technical decisions."
 license: MIT
 compatibility:
   - godot-4.0

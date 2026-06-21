@@ -1,6 +1,6 @@
 ---
 name: godot-gdscript-patterns
-description: GDScript best practices for Godot 4.x: node composition, typed signals, scene instantiation, resource management, singletons, event buses, and common design patterns. Use when writing or reviewing GDScript code in Godot.
+description: "GDScript best practices for Godot 4.x: node composition, typed signals, scene instantiation, resource management, singletons, event buses, and common design patterns. Use when writing or reviewing GDScript code in Godot."
 license: MIT
 compatibility:
   - godot-4.0

@@ -1,6 +1,6 @@
 ---
 name: godot-animation
-description: Animation systems for Godot 4.x: AnimationPlayer vs AnimationTree, state machines, blend spaces (1D/2D/directional), animation libraries, root motion, collapsible tracks, and tween_await(). Use when building character animations, cutscenes, or visual effects in Godot.
+description: "Animation systems for Godot 4.x: AnimationPlayer vs AnimationTree, state machines, blend spaces (1D/2D/directional), animation libraries, root motion, collapsible tracks, and tween_await(). Use when building character animations, cutscenes, or visual effects in Godot."
 license: MIT
 compatibility:
   - godot-4.0

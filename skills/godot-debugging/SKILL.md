@@ -1,6 +1,6 @@
 ---
 name: godot-debugging
-description: Debugging workflow for Godot 4.x: print vs push_error, editor output window, debugger panel, profiling with built-in profiler, network debugging, export/build troubleshooting. Use when debugging Godot games or resolving Godot-specific errors.
+description: "Debugging workflow for Godot 4.x: print vs push_error, editor output window, debugger panel, profiling with built-in profiler, network debugging, export/build troubleshooting. Use when debugging Godot games or resolving Godot-specific errors."
 license: MIT
 compatibility:
   - godot-4.0

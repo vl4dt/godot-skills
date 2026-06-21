@@ -1,6 +1,6 @@
 ---
 name: godot-code-review
-description: Reviews Godot projects for common pitfalls, performance issues, memory leaks, and anti-patterns. Provides a performance checklist, code style guidelines, and memory management review. Use when reviewing Godot GDScript or C# code.
+description: "Reviews Godot projects for common pitfalls, performance issues, memory leaks, and anti-patterns. Provides a performance checklist, code style guidelines, and memory management review. Use when reviewing Godot GDScript or C# code."
 license: MIT
 compatibility:
   - godot-4.0

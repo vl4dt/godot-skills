@@ -1,6 +1,6 @@
 ---
 name: godot-performance
-description: Performance optimization for Godot 4.x: profiling workflow (built-in profiler, CPU/GPU usage), memory management with ResourceCache and instance pooling, instancing optimization with packed scenes and LOD, render passes, draw calls, mobile-specific optimizations, Perfetto tracing, and nearest-neighbor viewport scaling. Use when debugging performance, optimizing games, or targeting low-end hardware.
+description: "Performance optimization for Godot 4.x: profiling workflow (built-in profiler, CPU/GPU usage), memory management with ResourceCache and instance pooling, instancing optimization with packed scenes and LOD, render passes, draw calls, mobile-specific optimizations, Perfetto tracing, and nearest-neighbor viewport scaling. Use when debugging performance, optimizing games, or targeting low-end hardware."
 license: MIT
 compatibility:
   - godot-4.0

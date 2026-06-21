@@ -1,6 +1,6 @@
 ---
 name: godot-physics
-description: Physics systems for Godot 4.x: collision layers/masks, rigid body dynamics, character controllers (CharacterBody2D/3D), area nodes for triggers, physics interpolation, bulk queries, and performance optimization. Use when implementing physics, collisions, movement, or triggers in Godot.
+description: "Physics systems for Godot 4.x: collision layers/masks, rigid body dynamics, character controllers (CharacterBody2D/3D), area nodes for triggers, physics interpolation, bulk queries, and performance optimization. Use when implementing physics, collisions, movement, or triggers in Godot."
 license: MIT
 compatibility:
   - godot-4.0

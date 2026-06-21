@@ -1,6 +1,6 @@
 ---
 name: godot-ui
-description: UI systems for Godot 4.x: Control node hierarchy, containers and layout modes (Anchor, Margin, Center, Fill, Expand), theme resources, custom styles, RichTextLabel formatting, PopupMenu search, and control offset transforms. Use when building menus, HUDs, inventory screens, or any UI in Godot.
+description: "UI systems for Godot 4.x: Control node hierarchy, containers and layout modes (Anchor, Margin, Center, Fill, Expand), theme resources, custom styles, RichTextLabel formatting, PopupMenu search, and control offset transforms. Use when building menus, HUDs, inventory screens, or any UI in Godot."
 license: MIT
 compatibility:
   - godot-4.0

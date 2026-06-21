@@ -1,6 +1,6 @@
 ---
 name: godot-project-setup
-description: Scaffolds a new Godot 4.x project with proper folder structure, .gdignore, export presets, .gitignore, and GDScript/C# Mono initialization. Use when creating a new Godot game or app.
+description: "Scaffolds a new Godot 4.x project with proper folder structure, .gdignore, export presets, .gitignore, and GDScript/C# Mono initialization. Use when creating a new Godot game or app."
 license: MIT
 compatibility:
   - godot-4.0

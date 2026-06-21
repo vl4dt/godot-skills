@@ -1,6 +1,6 @@
 ---
 name: godot-networking
-description: Networking and multiplayer for Godot 4.x: Multiplayer API with RPC system, authority models (server-authoritative vs client-predictive), replication patterns (rpc(), rset(), rset_group()), connection management, lag compensation, and Steam Frame integration. Use when building multiplayer games, networked simulations, or online features in Godot.
+description: "Networking and multiplayer for Godot 4.x: Multiplayer API with RPC system, authority models (server-authoritative vs client-predictive), replication patterns (rpc(), rset(), rset_group()), connection management, lag compensation, and Steam Frame integration. Use when building multiplayer games, networked simulations, or online features in Godot."
 license: MIT
 compatibility:
   - godot-4.0

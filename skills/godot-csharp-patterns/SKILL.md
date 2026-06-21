@@ -1,6 +1,6 @@
 ---
 name: godot-csharp-patterns
-description: C# Mono patterns for Godot 4.x: Export attributes, signal handling, performance optimization, GDExtension interop, and best practices for first-class C# support. Use when writing C# code in Godot.
+description: "C# Mono patterns for Godot 4.x: Export attributes, signal handling, performance optimization, GDExtension interop, and best practices for first-class C# support. Use when writing C# code in Godot."
 license: MIT
 compatibility:
   - godot-4.0
