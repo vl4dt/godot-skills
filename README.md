@@ -32,7 +32,7 @@ pi install ./path/to/godot-skills -l
 | **godot-csharp-patterns** | C# Mono patterns: Export attributes, signal handling, performance optimization, GDExtension interop |
 | **godot-code-review** | Common pitfalls, performance checklist, code style guidelines, memory management, signal leak detection |
 | **godot-debugging** | Debugging workflow, common error patterns, profiling, network debugging, export/build troubleshooting |
-| **godot-4.7-migration** | Step-by-step migration from Godot 4.x to 4.7: HDR, Steam Frame, AreaLight3D, VirtualJoystick, tween_await(), Perfetto tracing |
+| **godot-47-migration** | Step-by-step migration from Godot 4.x to 4.7: HDR, Steam Frame, AreaLight3D, VirtualJoystick, tween_await(), Perfetto tracing |
 | **godot-physics** | Physics systems: collision layers/masks, rigid body dynamics, character controllers (CharacterBody2D/3D), area triggers, physics interpolation |
 | **godot-animation** | Animation systems: AnimationPlayer vs AnimationTree, state machines, blend spaces (1D/2D/directional), root motion, tween_await() |
 | **godot-ui** | UI systems: Control hierarchy, containers and layout modes, themes, RichTextLabel, PopupMenu search, control offset transforms (4.7) |
@@ -193,7 +193,7 @@ godot-skills/
 │   ├── godot-debugging/
 │   │   ├── SKILL.md
 │   │   └── references/
-│   └── godot-4.7-migration/
+│   └── godot-47-migration/
 │       ├── SKILL.md
 │       └── references/
 │   ├── godot-physics/

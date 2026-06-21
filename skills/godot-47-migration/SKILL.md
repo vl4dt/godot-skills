@@ -1,5 +1,5 @@
 ---
-name: godot-4.7-migration
+name: godot-47-migration
 description: "Godot 4.7 migration guide: new features (HDR, Steam Frame, AreaLight3D, VirtualJoystick, tween_await, Perfetto tracing), breaking changes, and step-by-step migration patterns for existing Godot 4.x projects. Use when upgrading a Godot project to version 4.7."
 license: MIT
 compatibility:
