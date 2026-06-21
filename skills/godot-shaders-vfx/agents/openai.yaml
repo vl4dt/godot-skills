@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-shaders-vfx
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "writing shaders in Godot"
+  - "Godot visual effects"
+  - "particle systems Godot"
+  - "post-processing Godot"
+  - "Godot Shader Language"
+  - "GSL shader patterns"

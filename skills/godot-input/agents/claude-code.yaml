@@ -1,0 +1,15 @@
+# Claude Code extension for godot-input
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "implementing input in Godot"
+  - "Godot gamepad support"
+  - "input remapping Godot"
+  - "touch controls Godot"
+  - "virtual joystick Godot"
+  - "multi-touch Godot"
+
+tool_permissions:
+  - read
+  - write
+  - bash

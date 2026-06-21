@@ -1,0 +1,15 @@
+# Claude Code extension for godot-shaders-vfx
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "writing shaders in Godot"
+  - "Godot visual effects"
+  - "particle systems Godot"
+  - "post-processing Godot"
+  - "Godot Shader Language"
+  - "GSL shader patterns"
+
+tool_permissions:
+  - read
+  - write
+  - bash

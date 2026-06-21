@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-audio
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "implementing audio in Godot"
+  - "Godot sound effects"
+  - "audio bus mixing Godot"
+  - "spatial audio Godot"
+  - "dynamic music Godot"
+  - "sound pool Godot"

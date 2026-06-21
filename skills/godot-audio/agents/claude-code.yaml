@@ -1,0 +1,15 @@
+# Claude Code extension for godot-audio
+# Safely ignored by other agents per Agent Skills Open Standard
+
+when_to_use:
+  - "implementing audio in Godot"
+  - "Godot sound effects"
+  - "audio bus mixing Godot"
+  - "spatial audio Godot"
+  - "dynamic music Godot"
+  - "sound pool Godot"
+
+tool_permissions:
+  - read
+  - write
+  - bash

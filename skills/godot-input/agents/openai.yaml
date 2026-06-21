@@ -1,0 +1,14 @@
+# OpenAI / Codex CLI extension for godot-input
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: true
+
+when_to_use:
+  - "implementing input in Godot"
+  - "Godot gamepad support"
+  - "input remapping Godot"
+  - "touch controls Godot"
+  - "virtual joystick Godot"
+  - "multi-touch Godot"
