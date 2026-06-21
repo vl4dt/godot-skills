@@ -2,6 +2,18 @@
 
 All notable changes to @robotcat/godot-skills.
 
+Format: [Keep a Changelog](https://keepachangelog.com/) | Versioning: [SemVer](https://semver.org/)
+See [docs/changelog-guide.md](docs/changelog-guide.md) for conventions.
+
+## [Unreleased]
+
+### Added
+- `scripts/new-skill.sh` — Scaffold new skill directories from template
+- `docs/skill-template/` — Copy-paste skill template (SKILL.md, agents/, references/)
+- `docs/ecosystem.md` — Godot ecosystem integrations guide (20+ tools/plugins)
+- `docs/release-process.md` — Release checklist, npm publish steps, rollback procedure
+- `docs/changelog-guide.md` — Changelog format conventions and semver rules
+
 ## [1.0.0] — 2026-06-20
 
 ### Added — Phase 1: Core Standalone Skills

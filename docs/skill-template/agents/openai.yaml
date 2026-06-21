@@ -1,0 +1,15 @@
+# OpenAI Codex CLI agent extension for {{SKILL_NAME}}
+# Place this file at skills/{{SKILL_NAME}}/agents/openai.yaml
+
+name: {{SKILL_NAME}}
+description: "{{SKILL_DESCRIPTION}}"
+
+policy:
+  allow_read: true
+  allow_write: true
+  allow_bash: true
+
+triggers:
+  - "{{TOPIC_KEYWORDS}}"
+  - "Godot {{RELEVANT_CONTEXT}}"
+  - "{{SPECIFIC_TASK}}"

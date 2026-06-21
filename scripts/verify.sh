@@ -126,11 +126,27 @@ echo "[9] Scripts"
 [ -f "scripts/verify.sh" ] && pass "scripts/verify.sh" || fail "scripts/verify.sh missing"
 [ -f "scripts/lint-skills.sh" ] && pass "scripts/lint-skills.sh" || fail "scripts/lint-skills.sh missing"
 [ -f "scripts/check-agent-extensions.sh" ] && pass "scripts/check-agent-extensions.sh" || fail "scripts/check-agent-extensions.sh missing"
+[ -f "scripts/new-skill.sh" ] && pass "scripts/new-skill.sh" || fail "scripts/new-skill.sh missing"
 
 # [10] CI/CD
 echo ""
 echo "[10] CI/CD configuration"
 [ -f ".github/workflows/ci.yml" ] && pass "GitHub Actions CI workflow" || fail "GitHub Actions CI workflow missing"
+
+# [11] Community docs
+echo ""
+echo "[11] Community & release docs"
+[ -f "docs/ecosystem.md" ] && pass "docs/ecosystem.md" || fail "docs/ecosystem.md missing"
+[ -f "docs/release-process.md" ] && pass "docs/release-process.md" || fail "docs/release-process.md missing"
+[ -f "docs/changelog-guide.md" ] && pass "docs/changelog-guide.md" || fail "docs/changelog-guide.md missing"
+[ -d "docs/skill-template" ] && pass "docs/skill-template/ exists" || fail "docs/skill-template/ missing"
+
+# [12] Template completeness
+echo ""
+echo "[12] Skill template files"
+[ -f "docs/skill-template/SKILL.md" ] && pass "skill-template/SKILL.md" || fail "skill-template/SKILL.md missing"
+[ -f "docs/skill-template/agents/claude-code.yaml" ] && pass "skill-template/agents/claude-code.yaml" || fail "skill-template agents/ missing"
+[ -f "docs/skill-template/references/DETAIL.md" ] && pass "skill-template/references/DETAIL.md" || fail "skill-template references/ missing"
 
 echo ""
 echo "=========================================="

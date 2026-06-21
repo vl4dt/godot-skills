@@ -1,0 +1,15 @@
+# Claude Code agent extension for {{SKILL_NAME}}
+# Place this file at skills/{{SKILL_NAME}}/agents/claude-code.yaml
+
+name: {{SKILL_NAME}}
+description: "{{SKILL_DESCRIPTION}}"
+
+when_to_use:
+  - "User asks about {{TOPIC_KEYWORDS}}"
+  - "User mentions Godot {{RELEVANT_CONTEXT}}"
+  - "User needs help with {{SPECIFIC_TASK}}"
+
+tool_permissions:
+  read: true
+  write: true
+  bash: true
