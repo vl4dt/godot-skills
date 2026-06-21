@@ -18,3 +18,4 @@
 {"id":"int-979a7b47","kind":"field_change","created_at":"2026-06-21T09:35:42.6886782Z","actor":"Ricardo A. Salgado","issue_id":"godot-skills-4kq","extra":{"field":"status","new_value":"closed","old_value":"open"}}
 {"id":"int-76229c9a","kind":"field_change","created_at":"2026-06-21T09:35:43.260447Z","actor":"Ricardo A. Salgado","issue_id":"godot-skills-6yh","extra":{"field":"status","new_value":"closed","old_value":"open"}}
 {"id":"int-00092f41","kind":"field_change","created_at":"2026-06-21T09:35:43.830912Z","actor":"Ricardo A. Salgado","issue_id":"godot-skills-77d","extra":{"field":"status","new_value":"closed","old_value":"open"}}
+{"id":"int-05801adb","kind":"field_change","created_at":"2026-06-21T09:37:43.9371164Z","actor":"Ricardo A. Salgado","issue_id":"godot-skills-e53","extra":{"field":"status","new_value":"in_progress","old_value":"open"}}

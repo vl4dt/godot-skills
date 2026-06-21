@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/multiplayer_manager.gd" id="1_mp"]
+[ext_resource type="Script" path="res://scripts/lobby_ui.gd" id="2_ui"]
+
+[node name="Main" type="Node2D"]
+
+[node name="MultiplayerManager" type="Node"]
+script = ExtResource("1_mp")
+
+[node name="Background" type="ColorRect"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.15, 1.0)
+
+[node name="LobbyUI" type="PanelContainer"]
+layout_mode = 3
+anchors_preset = 8
+anchors_reset = false
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+script = ExtResource("2_ui")
+
+[node name="VBox" type="VBoxContainer" parent="LobbyUI"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="LobbyUI/VBox"]
+text = "Multiplayer Lobby"
+horizontal_alignment = 1
+
+[node name="RoomIdLabel" type="Label" parent="LobbyUI/VBox"]
+text = "Room: ---"
+
+[node name="StatusLabel" type="Label" parent="LobbyUI/VBox"]
+text = "Status: Disconnected"
+
+[node name="CreateBtn" type="Button" parent="LobbyUI/VBox"]
+text = "Create Room"
+
+[node name="JoinBtn" type="Button" parent="LobbyUI/VBox"]
+text = "Join Room (local)"
+
+[node name="Separator" type="HSeparator" parent="LobbyUI/VBox"]
+
+[node name="PlayerListLabel" type="Label" parent="LobbyUI/VBox"]
+text = "Players:"
+
+[node name="PlayerList" type="VBoxContainer" parent="LobbyUI/VBox"]
+layout_mode = 2
+
+[node name="ReadyBtn" type="Button" parent="LobbyUI/VBox"]
+text = "Set Ready"
+disabled = true
+
+[node name="DisconnectBtn" type="Button" parent="LobbyUI/VBox"]
+text = "Disconnect"
+visible = false

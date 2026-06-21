@@ -1,0 +1,3 @@
+# Godot ignore file
+*.import
+*.lfs

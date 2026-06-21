@@ -1,0 +1,24 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="Multiplayer Lobby"
+config/description="A multiplayer lobby demonstrating Godot 4.x networking patterns."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7")
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+
+[network]
+
+peer/connection_timeout=10000
+peer/max_packet_size=1400
+peer/port=8080
+
+[rendering]
+
+textures/canvas_textures/default_filter=0

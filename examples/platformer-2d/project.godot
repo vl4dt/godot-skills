@@ -1,0 +1,45 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="Platformer 2D"
+config/description="A minimal side-scrolling platformer demonstrating Godot 4.x skills patterns."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7")
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=32)]
+}
+move_left={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=65), InputEventKey(keycode=83)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=68), InputEventKey(keycode=65)]
+}
+jump={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=87), InputEventKey(keycode=85), InputEventKey(keycode=32)]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="platform"
+2d_physics/layer_4="hazard"
+
+[rendering]
+
+textures/canvas_textures/default_filter=0

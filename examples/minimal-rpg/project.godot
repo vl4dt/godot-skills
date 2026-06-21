@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; but it can also be edited manually if you know the format.
+
+config_version=5
+
+[application]
+
+config/name="Minimal RPG"
+config/description="A minimal top-down RPG demonstrating Godot 4.x skills patterns."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7")
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=640
+window/stretch/mode="canvas_items"
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=4194320)]
+}
+move_up={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=87), InputEventKey(keycode=85)]
+}
+move_down={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=83), InputEventKey(keycode=87)]
+}
+move_left={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=65), InputEventKey(keycode=83)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [InputEventKey(keycode=68), InputEventKey(keycode=65)]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="npc"
+2d_physics/layer_3="collectible"
+2d_physics/layer_4="wall"
+
+[rendering]
+
+textures/canvas_textures/default_filter=0
+textures/canvas_textures/default_anisotrophy_state=1
