@@ -4,11 +4,16 @@ Export from CI or an agent shell with zero editor interaction, once presets exis
 
 ## One-Time Setup Per Machine
 
-1. Export templates matching the engine version must be installed:
-   `%APPDATA%/Godot/export_templates/<version>/` (Windows) — install via any editor's
-   Manage Export Templates UI once, or copy them there manually.
-2. Android toolchain: JDK 17, Android SDK with build-tools/platform-tools, debug keystore.
-3. iOS builds always finish on macOS/Xcode — see iOS section.
+1. Export templates matching the engine version must be installed — per host:
+   - Windows: `%APPDATA%\Godot\export_templates\<version>\`
+   - Linux: `~/.local/share/godot/export_templates/<version>/`
+   - macOS: `~/Library/Application Support/Godot/export_templates/<version>/`
+   Install via any editor's Manage Export Templates UI once, or copy manually.
+2. Android toolchain (per build host): JDK 17, Android SDK with build-tools/platform-tools,
+   debug keystore. Typical `ANDROID_HOME`: `%LOCALAPPDATA%\Android\Sdk` (Windows),
+   `~/Android/Sdk` (Linux).
+3. iOS builds always finish on macOS/Xcode — see iOS section. Generating the Xcode project
+   folder itself works fine from Windows or Linux.
 
 ## Presets (`export_presets.cfg`)
 
@@ -65,6 +70,8 @@ godot --headless --path . --export-release "Android" builds/android/game.aab
 ```
 
 Guard the keystore like a password — losing it means losing app-signing continuity on Play.
+Keep one shared release keystore in sync between your Windows and Linux machines (password
+manager / secure transfer); signing with different keystores breaks update compatibility.
 
 ## Gradle Build Notes
 

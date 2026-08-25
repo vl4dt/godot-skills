@@ -46,8 +46,30 @@ the editor**. Every change must pass the headless gate before you claim it works
 godot --version          # e.g. 4.7.stable.official — confirm once per machine/session
 ```
 
-Export templates are needed only for §CLI Export. Install them once via the editor UI, or
-drop them into `%APPDATA%/Godot/export_templates/<engine-version>/` (Windows).
+The Godot binary must be on PATH **in the shell you run commands from** (Git Bash on Windows,
+native bash on Linux). Export templates are needed only for §CLI Export:
+
+| Host | Template install path |
+|---|---|
+| Windows | `%APPDATA%\Godot\export_templates\<engine-version>\` |
+| Linux | `~/.local/share/godot/export_templates/<engine-version>/` |
+| macOS | `~/Library/Application Support/Godot/export_templates/<engine-version>/` |
+
+## Cross-Platform (Windows ↔ Ubuntu hosts)
+
+All Godot CLI flags, gdUnit4 runners (`runtest.cmd` / `runtest.sh`), `res://` paths, and
+export behavior are **identical across hosts** — projects stay fully portable. Watch only:
+
+1. **Line endings kill `.sh` scripts**: if `verify.sh` is checked out with CRLF on Linux it
+   fails with `$'\r': command not found`. Add to every game repo's `.gitattributes`:
+   `*.sh text eol=lf` (and commit it from day one).
+2. **Runner extension differs by host** — `runtest.cmd` on Windows, `runtest.sh` elsewhere;
+   detect or parameterize instead of hardcoding one.
+3. **Don't mix toolchain worlds**: run Godot + Android SDK/adb **natively** per OS. Building
+   inside WSL while your emulator/adb runs on Windows causes device-detection pain.
+   On Ubuntu, USB debugging needs udev rules for your phone vendor before `adb devices` lists it.
+4. **Signing env vars are the same** on both hosts — just use absolute paths appropriate
+   per filesystem in `GODOT_ANDROID_KEYSTORE_PATH`.
 
 ## The Core Loop
 
