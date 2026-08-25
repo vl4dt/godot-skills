@@ -1,0 +1,13 @@
+# OpenAI / Codex CLI extension for godot-headless-workflow
+# Safely ignored by other agents per Agent Skills Open Standard
+
+policy:
+  safe: true
+  no_network: false
+
+when_to_use:
+  - "building or modifying a Godot game from a coding agent"
+  - "validating GDScript changes without opening the editor"
+  - "running Godot tests in CI"
+  - "exporting Android/iOS builds from the command line"
+  - "integrating RevenueCat purchases in a Godot game"

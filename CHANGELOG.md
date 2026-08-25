@@ -8,6 +8,7 @@ See [docs/changelog-guide.md](docs/changelog-guide.md) for conventions.
 ## [Unreleased]
 
 ### Added
+- `godot-headless-workflow` — Agent-first development loop: headless validation/import gates, gdUnit4 CLI testing, text-scene editing safety rules, CLI export pipeline with Android/iOS presets and signing env vars, store-submission checklist, and RevenueCat plugin integration playbook
 - `scripts/new-skill.sh` — Scaffold new skill directories from template
 - `docs/skill-template/` — Copy-paste skill template (SKILL.md, agents/, references/)
 - `docs/ecosystem.md` — Godot ecosystem integrations guide (20+ tools/plugins)
