@@ -248,11 +248,29 @@ Use project_settings_set with key xr/openxr/enabled for extended reality develop
 Use script_validate with suggestTweenAwait: true to detect nested tween callback patterns and suggest migration to await syntax.
 ## Security
 
-- Connection is local-only (127.0.0.1) by default
-- No authentication required for local connections
-- The Godot editor must be running with the MCP plugin enabled
-- File operations are scoped to the project directory (res://)
-- Write operations require explicit confirmation from the agent
+This channel exposes file writes and scene execution, so treat it as a privileged
+control channel rather than a debug port. A plugin implementing this protocol MUST
+satisfy all of the following.
+
+- **Authenticate every connection.** On startup the plugin generates a random
+  per-session token and writes it somewhere only the user can read. The MCP server
+  reads it from the `GODOT_MCP_TOKEN` environment variable and sends it as `token`
+  in the `connect` handshake. Reject any handshake whose token is absent or does
+  not match, and never fall back to unauthenticated access.
+- **Reject cross-origin connections.** Browsers do not apply the same-origin policy
+  to WebSockets, so any page the user visits can open `ws://127.0.0.1:6789` and
+  drive the bridge. Reject any handshake that carries an `Origin` header — a local
+  editor plugin never has a legitimate browser client.
+- **Bind to 127.0.0.1 only**, never `0.0.0.0`. Localhost is a reachability limit,
+  not an authorization boundary.
+- **Validate every path on the server side.** `res://` is not a sandbox: Godot
+  resolves `res://../..` and absolute host paths outside the project. Reject any
+  path that is not `res://`-prefixed or that contains a `..` segment, then confirm
+  `ProjectSettings.globalize_path()` still lands under the project root before
+  opening the file. The MCP server applies the same check before sending, but the
+  plugin is the trust boundary.
+- The Godot editor must be running with the MCP plugin enabled.
+- Write operations require explicit confirmation from the agent.
 
 ## Versioning
 

@@ -27,9 +27,27 @@ metadata:
 
 Patterns for persisting game state reliably.
 
-## Resource-Based Saves (Recommended)
+## Never Load a Save File as a Resource
 
-Godot's `Resource` system provides native serialization with type safety:
+`ResourceLoader.load()` on a `.tres`/`.res` file is **code execution**, not
+deserialization. A resource file can reference a script, and that script's
+`_init()` runs the moment the file is loaded. Save files live in `user://`, which
+the player — or anything that can write to their disk, including a compromised
+cloud save endpoint — fully controls.
+
+```gdscript
+# DANGEROUS — a crafted user://savegame.tres executes arbitrary code on load
+var data = ResourceLoader.load("user://savegame.tres") as SaveData
+```
+
+Save game state as plain data instead: JSON for readability, `var_to_bytes()` for
+compactness. Both round-trip Godot's built-in types without instantiating objects.
+
+## Dictionary Saves (Recommended)
+
+Godot's `Resource` system provides native serialization with type safety, and is
+the right tool for *authored* content shipped inside `res://`. For player saves,
+keep the typed `SaveData` class as your in-memory shape but persist a dictionary:
 
 ```gdscript
 class_name SaveData extends Resource
@@ -40,32 +58,72 @@ const SAVE_VERSION := 1
 @export var timestamp: float = 0.0
 @export var player_position: Vector2 = Vector2.ZERO
 @export var player_health: int = 100
-@export var inventory: Array[Resource] = []
+@export var inventory: Array[String] = []  # item ids, resolved against res:// on load
 @export var quest_flags: Dictionary = {}
+
+func to_dict() -> Dictionary:
+    return {
+        "save_version": save_version,
+        "timestamp": timestamp,
+        "player_position": player_position,
+        "player_health": player_health,
+        "inventory": inventory,
+        "quest_flags": quest_flags,
+    }
+
+# Every field is untrusted — a save file can claim anything.
+static func from_dict(d: Dictionary) -> SaveData:
+    var data := SaveData.new()
+    data.save_version = int(d.get("save_version", 0))
+    data.timestamp = float(d.get("timestamp", 0.0))
+    data.player_health = clampi(int(d.get("player_health", 100)), 0, 100)
+
+    var pos = d.get("player_position", Vector2.ZERO)
+    data.player_position = pos if pos is Vector2 else Vector2.ZERO
+
+    var flags = d.get("quest_flags", {})
+    data.quest_flags = flags if flags is Dictionary else {}
+
+    for item in d.get("inventory", []):
+        if item is String:
+            data.inventory.append(item)
+
+    return data
 ```
+
+Storing item **ids** rather than `Array[Resource]` is what keeps the save free of
+objects: ids are looked up in a table you control, so a save file can never name a
+script to instantiate.
 
 ### Save Manager
 
 ```gdscript
 class_name SaveManager extends Node
 
-const SAVE_PATH := "user://savegame.tres"
+const SAVE_PATH := "user://savegame.save"
 
 func save(data: SaveData) -> Error:
     data.timestamp = Time.get_unix_time_from_system()
-    var error = ResourceSaver.save(data, SAVE_PATH)
-    if error != Error.OK:
-        push_error("SaveManager: Failed to save — %d" % error)
-    return error
+    var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+    if not file:
+        push_error("SaveManager: Failed to save — %d" % FileAccess.get_open_error())
+        return Error.ERR_FILE_CANT_OPEN
+    # allow_objects stays off: only built-in types cross this boundary
+    file.store_var(data.to_dict(), false)
+    return Error.OK
 
 func load() -> SaveData:
     if not FileAccess.file_exists(SAVE_PATH):
         return null
-    var data = ResourceLoader.load(SAVE_PATH) as SaveData
-    if not data:
+    var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+    if not file:
         push_error("SaveManager: Failed to load save file")
         return null
-    return data
+    var raw = file.get_var(false)
+    if raw is not Dictionary:
+        push_error("SaveManager: Save file is malformed")
+        return null
+    return SaveData.from_dict(raw)
 
 func delete() -> void:
     DirAccess.remove_absolute(SAVE_PATH)
@@ -74,11 +132,15 @@ func has_save() -> bool:
     return FileAccess.file_exists(SAVE_PATH)
 ```
 
+`store_var`/`get_var` with `allow_objects = false` is the whole mitigation: a
+malicious save can then only produce wrong *data*, never running code. Treat every
+field as untrusted input and clamp it in `from_dict()`.
+
 ### Multiple Save Slots
 
 ```gdscript
 func get_slot_path(slot_index: int) -> String:
-    return "user://savegame_%d.tres" % slot_index
+    return "user://savegame_%d.save" % slot_index
 
 # Save slot metadata for UI display
 class_name SlotInfo extends Resource
@@ -105,7 +167,7 @@ func save_as_json(data: SaveData, path: String) -> Error:
     var json = JSON.stringify(dict)
     var file = FileAccess.open(path, FileAccess.WRITE)
     if not file:
-        return Error.CANT_OPEN
+        return Error.ERR_FILE_CANT_OPEN
     file.store_string(json)
     return Error.OK
 
@@ -125,8 +187,8 @@ func load_from_json(path: String) -> SaveData:
 Handle save format changes across game updates:
 
 ```gdscript
-func load() -> SaveData:
-    var raw = ResourceLoader.load(SAVE_PATH) as SaveData
+func load_migrated() -> SaveData:
+    var raw = load()
     if not raw:
         return null
 
@@ -186,6 +248,10 @@ func save_with_backup(data: SaveData) -> Error:
 
 ## Cloud Save Integration Pattern
 
+A downloaded save is attacker-controlled input: it crossed a network you do not
+control. Parse it with the same object-free loader used for local saves, and
+validate before applying. Never hand a downloaded blob to `ResourceLoader`.
+
 Abstract cloud provider behind an interface:
 
 ```gdot
@@ -228,7 +294,7 @@ func _on_auto_save() -> void:
 
 ## Godot 4.7 Save Notes
 
-- **ResourceSaver** supports `ResourceSaver.FLAG_COMPRESS` for smaller save files
+- **ResourceSaver/ResourceLoader** are for authored `res://` content, not player saves
 - **ConfigFile** — Use for settings/preferences (separate from game saves)
 
 ## MCP Bridge Tools (Optional — Live Editor Integration)
