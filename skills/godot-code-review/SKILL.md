@@ -173,9 +173,3 @@ When the MCP bridge is running (Phase 2), these tools enhance code review:
 - **`class_db_info`** — Verify methods/properties exist before flagging issues
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [GDScript Style Guide](references/gdscript-styleguide.md)
-- [Performance Optimization Guide](references/performance-checklist.md)
-- [Memory Management Patterns](references/memory-patterns.md)

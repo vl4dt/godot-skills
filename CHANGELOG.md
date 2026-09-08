@@ -14,6 +14,21 @@ See [docs/changelog-guide.md](docs/changelog-guide.md) for conventions.
 - `docs/ecosystem.md` — Godot ecosystem integrations guide (20+ tools/plugins)
 - `docs/release-process.md` — Release checklist, npm publish steps, rollback procedure
 - `docs/changelog-guide.md` — Changelog format conventions and semver rules
+- `SECURITY.md` — Reporting process, MCP bridge threat model, and the Godot patterns treated as vulnerabilities here
+
+### Security
+- MCP bridge validates every path-carrying RPC parameter in one place. `res://` is not a sandbox on its own: Godot resolves `res://../..` and absolute host paths outside the project
+- MCP bridge sends `GODOT_MCP_TOKEN` in the connect handshake; `mcp-bridge/protocol.md` now requires token authentication and rejection of `Origin`-bearing (browser) connections, since localhost is a reachability limit rather than an authorization boundary
+- `godot-save-systems` — replaced `ResourceLoader.load()` on `user://` saves with `store_var`/`get_var` at `allow_objects = false`. Loading a crafted `.tres` executes attached scripts, and the cloud-save section made that blob remote-controlled
+- `godot-networking` — pickup scenes resolve through a fixed table instead of a load path built from RPC arguments
+
+### Fixed
+- `scripts/new-skill.sh` — escape the description before using it as a `sed` replacement
+- `godot-save-systems` — `Error.CANT_OPEN` corrected to `Error.ERR_FILE_CANT_OPEN`, which is the enum that actually exists
+- `zod` declared explicitly instead of being hoisted from the MCP SDK as a phantom dependency
+
+### Removed
+- Dangling `## References` sections from 20 skills — the linked files were never written. `scripts/verify.sh` now checks that reference links resolve instead of requiring a `references/` directory, so a skill may ship without one
 
 ## [1.0.0] — 2026-06-20
 

@@ -305,9 +305,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`project_info`** — Check user:// directory paths for save location debugging
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Resource Save Patterns](references/resource-saves.md)
-- [Save Migration Strategies](references/save-migration.md)
-- [Cloud Save Integration](references/cloud-saves.md)

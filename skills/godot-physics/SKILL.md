@@ -312,9 +312,3 @@ When the MCP bridge is running (Phase 2), these tools enhance physics debugging:
 - **`physics_stats`** — View active physics bodies, sleep count, and frame cost
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [CharacterBody3D Documentation](references/characterbody3d-guide.md)
-- [Collision Layer Design Patterns](references/collision-layers.md)
-- [Physics Material Reference](references/physics-materials.md)

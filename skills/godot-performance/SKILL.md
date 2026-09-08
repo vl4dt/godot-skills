@@ -321,9 +321,3 @@ When the MCP bridge is running (Phase 2), these tools enhance performance debugg
 - **`perfetto_export`** — Export Perfetto trace for Android debugging
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Profiler Documentation](references/profiler-guide.md)
-- [Memory Management Patterns](references/memory-patterns.md)
-- [Mobile Optimization Checklist](references/mobile-checklist.md)

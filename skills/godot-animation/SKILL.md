@@ -295,9 +295,3 @@ When the MCP bridge is running (Phase 2), these tools enhance animation debuggin
 - **`animation_preview_frame`** — Preview a specific frame of any animation
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [AnimationPlayer Documentation](references/animationplayer-guide.md)
-- [AnimationTree State Machine Patterns](references/animationtree-states.md)
-- [Blend Space Design Guide](references/blend-spaces.md)

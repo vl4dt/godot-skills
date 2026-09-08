@@ -277,9 +277,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`script_read`** / **`script_edit`** — Read and modify state machine scripts
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [FSM Implementation Guide](references/fsm-guide.md)
-- [Behavior Tree Patterns](references/behavior-trees.md)
-- [Hierarchical FSM Examples](references/hierarchical-fsm.md)

@@ -41,19 +41,23 @@ else
     fail "Agent extension validation failed — run scripts/check-agent-extensions.sh for details"
 fi
 
-# [1d] references/ directories
+# [1d] references/ links resolve
+# A skill needs no references/ at all; what breaks an agent is a link to a file
+# that isn't there.
 echo ""
-echo "[1d] References directories"
-REF_MISSING=0
+echo "[1d] Reference links"
+REF_BROKEN=0
 for skill_dir in skills/*/; do
     skill_name=$(basename "$skill_dir")
-    if [ ! -d "$skill_dir/references" ]; then
-        fail "$skill_name — references/ directory missing"
-        REF_MISSING=$((REF_MISSING+1))
-    fi
+    for target in $(grep -o 'references/[A-Za-z0-9._-]*\.md' "$skill_dir/SKILL.md" 2>/dev/null | sort -u); do
+        if [ ! -f "$skill_dir$target" ]; then
+            fail "$skill_name — SKILL.md links to missing $target"
+            REF_BROKEN=$((REF_BROKEN+1))
+        fi
+    done
 done
-if [ "$REF_MISSING" -eq 0 ]; then
-    pass "All skills have references/ directories"
+if [ "$REF_BROKEN" -eq 0 ]; then
+    pass "Reference links all resolve"
 fi
 
 # [2] Package structure

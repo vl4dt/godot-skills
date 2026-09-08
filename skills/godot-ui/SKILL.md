@@ -281,9 +281,3 @@ When the MCP bridge is running (Phase 2), these tools enhance UI debugging:
 - **`ui_find_control`** — Find controls by path or name in the scene tree
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Control Node Documentation](references/control-reference.md)
-- [Container Layout Patterns](references/container-patterns.md)
-- [Theme Resource Guide](references/theme-resources.md)

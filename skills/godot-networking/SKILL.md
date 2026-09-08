@@ -362,9 +362,3 @@ When the MCP bridge is running (Phase 2), these tools enhance networking debuggi
 - **`lobby_inspect`** — Query Steam lobby state and player list
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Multiplayer API Documentation](references/multiplayer-api.md)
-- [RPC Patterns Deep Dive](references/rpc-patterns.md)
-- [Authority Models Guide](references/authority-models.md)

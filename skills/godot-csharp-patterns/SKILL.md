@@ -235,9 +235,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`class_db_info`** — Query Godot class info for C# interop patterns
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [C# API Reference](references/csharp-api.md)
-- [Performance Guide](references/performance.md)
-- [GDExtension Guide](references/gdextension.md)

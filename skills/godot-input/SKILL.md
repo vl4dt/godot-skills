@@ -367,9 +367,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`script_read`** / **`script_edit`** — Read and modify input scripts
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Input Map Best Practices](references/input-map.md)
-- [Gamepad Support Guide](references/gamepad-support.md)
-- [Touch Input Patterns](references/touch-input.md)

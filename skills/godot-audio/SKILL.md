@@ -290,9 +290,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`project_info`** — Check configured audio buses and settings
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Audio Bus Configuration](references/audio-buses.md)
-- [Spatial Audio Deep Dive](references/spatial-audio.md)
-- [Dynamic Music Patterns](references/dynamic-music.md)
