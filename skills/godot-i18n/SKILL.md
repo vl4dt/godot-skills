@@ -229,9 +229,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`script_read`** / **`script_edit`** — Read and modify localization scripts
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [TranslationServer Deep Dive](references/translation-server.md)
-- [RTL Layout Patterns](references/rtl-layout.md)
-- [Font Fallback Strategies](references/font-fallbacks.md)

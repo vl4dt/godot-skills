@@ -243,9 +243,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`scene_tree`** — Inspect dialogue UI node hierarchy
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Dialogue Resource Design](references/dialogue-resources.md)
-- [Branching Narrative Patterns](references/branching-narrative.md)
-- [Typewriter Effect Variants](references/typewriter-effects.md)

@@ -130,9 +130,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect your live proj
 - **`project_settings_read`** — Check current project configuration during brainstorming
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Scene Composition Patterns](references/scene-composition.md)
-- [State Machine Implementations](references/state-machines.md)
-- [Network Architecture Guide](references/network-architecture.md)

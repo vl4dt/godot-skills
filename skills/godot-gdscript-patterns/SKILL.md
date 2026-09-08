@@ -174,9 +174,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`class_db_info`** — Query available methods/properties on any Godot class
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [GDScript Style Guide](references/gdscript-style.md)
-- [Signal Patterns Deep Dive](references/signals.md)
-- [Resource Management](references/resource-management.md)

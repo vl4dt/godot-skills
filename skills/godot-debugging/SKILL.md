@@ -210,9 +210,3 @@ When the MCP bridge is running (Phase 2), these tools provide live debugging cap
 - **`scene_tree`** — Inspect runtime scene hierarchy for missing nodes
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Debugging Guide](references/debugging-workflow.md)
-- [Profiler Deep Dive](references/profiler-guide.md)
-- [Network Debugging](references/network-debug.md)

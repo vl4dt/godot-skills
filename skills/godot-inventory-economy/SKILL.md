@@ -306,9 +306,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`scene_tree`** — Inspect inventory UI node hierarchy
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Item Resource Design](references/item-resources.md)
-- [Inventory UI Patterns](references/inventory-ui.md)
-- [Economy Balance Guide](references/economy-balance.md)

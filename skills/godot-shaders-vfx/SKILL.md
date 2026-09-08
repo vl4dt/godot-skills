@@ -291,9 +291,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`scene_tree`** — Inspect particle node hierarchy and parameters
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [GSL Shader Patterns](references/gsl-patterns.md)
-- [Particle System Guide](references/particle-systems.md)
-| [Post-Processing Effects](references/post-processing.md)

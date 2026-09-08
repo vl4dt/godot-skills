@@ -56,6 +56,10 @@ fi
 # --- Generate title from name (capitalize words) ---
 SKILL_TITLE=$(echo "$SKILL_NAME" | sed 's/-/ /g; s/\b\(.\)/\u\1/g')
 
+# Escape the description for use as a sed replacement: a bare / & or \ in the
+# text would otherwise be read as sed syntax and corrupt the generated files.
+SKILL_DESCRIPTION_ESC=$(printf '%s' "$SKILL_DESCRIPTION" | sed -e 's/[\/&\\]/\\&/g')
+
 # --- Create directory structure ---
 mkdir -p "$TARGET_DIR/agents"
 mkdir -p "$TARGET_DIR/references"
@@ -65,7 +69,7 @@ for template in SKILL.md agents/claude-code.yaml agents/openai.yaml references/D
     if [ -f "$TEMPLATE_DIR/$template" ]; then
         sed \
             -e "s/{{SKILL_NAME}}/$SKILL_NAME/g" \
-            -e "s/{{SKILL_DESCRIPTION}}/$SKILL_DESCRIPTION/g" \
+            -e "s/{{SKILL_DESCRIPTION}}/$SKILL_DESCRIPTION_ESC/g" \
             -e "s/{{SKILL_TITLE}}/$SKILL_TITLE/g" \
             "$TEMPLATE_DIR/$template" > "$TARGET_DIR/$template"
     fi

@@ -70,7 +70,7 @@ describe("parseArgs", () => {
 
 // ── Error code constants test ───────────────────────────────────────
 
-import { ERROR_CODES } from "./godot-connector.js";
+import { ERROR_CODES, assertProjectPath } from "./godot-connector.js";
 
 describe("ERROR_CODES", () => {
   it("includes all standard JSON-RPC error codes", () => {
@@ -90,6 +90,29 @@ describe("ERROR_CODES", () => {
     expect(ERROR_CODES.PROPERTY_NOT_FOUND).toBe(-32005);
     expect(ERROR_CODES.SCENE_RUNNING).toBe(-32006);
     expect(ERROR_CODES.FEATURE_NOT_AVAILABLE).toBe(-32007);
+  });
+});
+
+// ── Path validation ─────────────────────────────────────────────────
+
+describe("assertProjectPath", () => {
+  it("accepts paths inside the project", () => {
+    expect(() => assertProjectPath("res://scenes/player.tscn", "path")).not.toThrow();
+    expect(() => assertProjectPath("res://", "scope")).not.toThrow();
+  });
+
+  it("rejects traversal out of the project", () => {
+    expect(() => assertProjectPath("res://../../../etc/passwd", "path")).toThrow(/traverse/);
+    expect(() => assertProjectPath("res://scenes/../../..", "path")).toThrow(/traverse/);
+  });
+
+  it("rejects backslash traversal", () => {
+    expect(() => assertProjectPath("res://..\\..\\etc\\passwd", "path")).toThrow(/traverse/);
+  });
+
+  it("rejects absolute host paths and other schemes", () => {
+    expect(() => assertProjectPath("/etc/passwd", "path")).toThrow(/res:\/\//);
+    expect(() => assertProjectPath("user://savegame.tres", "path")).toThrow(/res:\/\//);
   });
 });
 

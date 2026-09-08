@@ -211,9 +211,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`class_db_info`** — Query available methods on Godot classes for integration points
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Composition Patterns](references/composition-patterns.md)
-- [Service Locator vs Signals](references/service-locator-vs-signals.md)
-- [ECS Approximation Guide](references/ecs-approximation.md)

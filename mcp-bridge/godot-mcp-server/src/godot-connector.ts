@@ -54,6 +54,35 @@ export const ERROR_CODES = {
   FEATURE_NOT_AVAILABLE: -32007,
 } as const;
 
+// ── Path validation ─────────────────────────────────────────────────
+
+/** Request parameters that name a project file. `nodePath` names a scene node, not a file. */
+const PATH_PARAMS = ["path", "scenePath", "scope"];
+
+const RES_PREFIX = "res://";
+
+/**
+ * Godot happily resolves `res://../..` and absolute host paths, so the `res://`
+ * prefix is not a sandbox on its own — every segment has to be checked.
+ */
+export function assertProjectPath(value: string, param: string): void {
+  const normalized = value.replace(/\\/g, "/");
+
+  if (!normalized.startsWith(RES_PREFIX)) {
+    throw new GodotRpcError(
+      ERROR_CODES.PERMISSION_DENIED,
+      `'${param}' must be a ${RES_PREFIX} path inside the project (got '${value}')`
+    );
+  }
+
+  if (normalized.slice(RES_PREFIX.length).split("/").includes("..")) {
+    throw new GodotRpcError(
+      ERROR_CODES.PERMISSION_DENIED,
+      `'${param}' must not traverse outside the project (got '${value}')`
+    );
+  }
+}
+
 // ── Connector class ─────────────────────────────────────────────────
 
 export class GodotConnector {
@@ -106,6 +135,7 @@ export class GodotConnector {
             params: {
               clientName: "godot-mcp-server",
               clientVersion: "0.2.0-alpha",
+              token: process.env.GODOT_MCP_TOKEN,
               features: ["scene", "script", "runtime", "project", "files", "viz"],
             },
           };
@@ -157,6 +187,11 @@ export class GodotConnector {
 
   /** Send a JSON-RPC request and return the result */
   async request(method: string, params?: Record<string, unknown>): Promise<unknown> {
+    for (const key of PATH_PARAMS) {
+      const value = params?.[key];
+      if (typeof value === "string") assertProjectPath(value, key);
+    }
+
     if (!this.isConnected) {
       await this.connect();
     }

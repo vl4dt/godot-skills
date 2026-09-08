@@ -158,9 +158,3 @@ When the MCP bridge is running (Phase 2), these tools can inspect and modify you
 - **`class_db_info`** — Query Godot class database for export preset node types
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Godot Project Configuration](references/project-configuration.md)
-- [Export Presets Deep Dive](references/export-presets.md)
-- [Mono/C# Setup Guide](references/mono-setup.md)

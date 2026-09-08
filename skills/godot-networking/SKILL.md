@@ -142,9 +142,19 @@ func _physics_process(delta: float):
 rpc("rpc_on_enemy_hit", damage, target_id)
 
 # With parameters
+const PICKUP_SCENES := {
+    "health": preload("res://scenes/pickups/health.tscn"),
+    "ammo": preload("res://scenes/pickups/ammo.tscn"),
+}
+
 @rpc("reliable")
 func rpc_spawn_pickup(pickup_type: String, position: Vector3):
-    var pickup = preload("res://scenes/pickups/" + pickup_type + ".tscn").instantiate()
+    # Never build a load path from RPC arguments: the sender controls that string
+    # and would choose which resource you load. Look it up in a fixed table.
+    if not PICKUP_SCENES.has(pickup_type):
+        push_warning("Rejected unknown pickup type: %s" % pickup_type)
+        return
+    var pickup = PICKUP_SCENES[pickup_type].instantiate()
     pickup.global_position = position
     get_tree().root.add_child(pickup)
 ```
@@ -352,9 +362,3 @@ When the MCP bridge is running (Phase 2), these tools enhance networking debuggi
 - **`lobby_inspect`** — Query Steam lobby state and player list
 
 > **Note:** MCP tools require the Godot editor to be running with the MCP plugin enabled. Skills work independently without the bridge.
-
-## References
-
-- [Multiplayer API Documentation](references/multiplayer-api.md)
-- [RPC Patterns Deep Dive](references/rpc-patterns.md)
-- [Authority Models Guide](references/authority-models.md)
